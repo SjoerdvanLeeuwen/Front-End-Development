@@ -1,0 +1,917 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Header contact info */
+header > p {
+    background-color: #20412F;
+    color: #A0C3A9;
+    text-align: center;
+    padding: 0.75em;
+    margin: 0;
+    font-size: 0.9em;
+    width: 100%;
+}
+
+header > p > a {
+    color: #A0C3A9;
+}
+
+
+/* Logo and navigation styles */
+header > nav {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    width: 100%;
+    padding: 1.5em 2em;
+    position: relative;
+}
+
+header > a {
+    display: flex;
+    align-items: center;
+    margin-right: auto; 
+    padding-left: 2em;
+    position: relative;
+    top: 3.75em; 
+    transform: translateY(-50%);
+}
+
+header > a img {
+    max-height: 3.125em; 
+}
+
+/* Hamburger menu */
+header > button {
+    font-size: 2em;
+    color: #20412F;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+}
+
+header > button::before,
+header > button::after,
+header > button span {
+    display: block;
+    width: 1.875em; 
+    height: 0.25em; 
+    margin: 0.375em auto; 
+    background-color: #20412F;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements */
+
+/* Navigation menu */
+header > nav ul {
+    display: flex;
+    justify-content: flex-end; 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 5em; 
+    margin-bottom: 0.5em;  
+}
+
+header > nav ul li {
+    margin-left: 2em; 
+}
+
+header > nav ul li a {
+    text-decoration: none;
+    color: #20412F;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+header > nav ul li a:hover {
+    color: #A0C3A9;
+}
+
+/* Responsive styling for mobile header */
+@media (max-width: 48em) { 
+    header > button {
+        display: block;
+        position: absolute;
+        right: 2em;
+        top: 3.75em;
+        transform: translateY(-50%);
+    }
+
+    header > nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    header.nav-open > nav > ul {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 0.5em 0; 
+        width: 100%;
+        position: absolute;
+        top: 3.75em;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    header > nav ul li {
+        margin-bottom: 0.5em; 
+        text-align: center;
+        width: 100%;
+    }
+
+    header > nav ul li a {
+        display: block;
+        padding: 0.75em; 
+        text-decoration: none;
+        font-size: 1.2em; 
+        color: #20412F;
+        font-weight: bold;
+        width: 100%;
+        background-color: white;
+    }
+
+    header > nav ul li a:hover {
+        color: #A0C3A9;
+    }
+
+    header > nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5em 0;
+    }
+
+    header > a {
+        padding-left: 2em;
+    }
+}
+
+/* Main section of the homepage */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 2em;
+    max-width: 75em; 
+    margin: 0 auto;
+}
+
+/* Hero section */
+main > section:nth-of-type(1) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+main > section:nth-of-type(1) img {
+    width: 100%;
+    max-width: 75em;
+    height: auto;
+    border-radius: 0.625em; 
+    object-fit: cover;
+}
+
+/* Info articles section */
+main > section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25em;
+    width: 100%;
+    max-width: 75em;
+}
+
+main > section:nth-of-type(2) > article {
+    background-color: #EBF1E5;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    text-align: center;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1); 
+}
+
+main > section:nth-of-type(2) > article:nth-child(1) {
+    background-color: #EBF1E5;
+}
+
+main > section:nth-of-type(2) > article:nth-child(2) {
+    background-color: #DDEEDB;
+}
+
+main > section:nth-of-type(2) > article:nth-child(3) {
+    background-color: #BFD4B2;
+}
+
+/* Footer styles */
+footer > section {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1.25em;
+    box-shadow: 0 -0.125em 0.25em rgba(0, 0, 0, 0.1); 
+}
+
+footer > section ul {
+    display: flex;
+    list-style: none;
+    gap: 1.25em;
+    margin: 0;
+    padding: 0;
+}
+
+footer > section ul li {
+    display: inline-block;
+}
+
+footer > section ul li a img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+footer > p {
+    background-color: #20412F;
+    color: white;
+    text-align: center;
+    padding: 1.25em;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive design for homepage */
+@media (max-width: 48em) {
+    main > section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    main > section:nth-of-type(1) img {
+        width: 100%;
+    }
+
+    body > header > nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body > header > nav ul li {
+        margin-bottom: 0.5em;
+    }
+}
+
+/* --------- PRIVATE DINING PAGE STYLES --------- */
+
+/* Private Dining Hero Section */
+main#private-dining {
+    margin-top: 0;
+    width: 100vw;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+@media (max-width: 48em) {
+    main#private-dining section {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%; 
+    }
+}
+
+@media (max-width: 48em) {
+    main#private-dining section:nth-of-type(1),
+    main#private-dining section:nth-of-type(3),
+    main#private-dining section:nth-of-type(5) {
+        width: 100%; /* Pas breedte aan voor mobiele weergave */
+        padding: 1em;
+        box-sizing: border-box; 
+    }
+
+    main#private-dining section img {
+        width: 100%; 
+    }
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries */
+
+/* Section 1: Private Dining */
+main#private-dining section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: 1fr 28.125em; 
+    grid-template-rows: auto;
+    column-gap: 1em;
+    align-items: start;
+    max-width: 75em;
+    margin: 1em auto;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 0.9375em; 
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
+}
+
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model */
+/* https://www.w3schools.com/cssref/sel_nth-of-type.php */
+
+main#private-dining section:nth-of-type(1) img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+    width: 100%;
+    height: 28em;
+    border-radius: 0.9375em;
+    object-fit: cover;
+}
+
+main#private-dining section:nth-of-type(1) h1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 2.2em;
+    color: #20412F;
+    margin: 0;
+    padding-bottom: 0.2em;
+}
+
+main#private-dining section:nth-of-type(1) p:nth-of-type(1),
+main#private-dining section:nth-of-type(1) p:nth-of-type(2) {
+    grid-column: 1 / 2;
+    margin: 0;
+    padding-bottom: 0.4em;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Smaller 'Contact opnemen' button */
+main#private-dining section:nth-of-type(1) a {
+    grid-column: 1 / 2;
+    display: inline-block;
+    margin: 0;
+    background-color: #20412F;
+    color: white;
+    padding: 0.5em 1em; 
+    text-decoration: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+
+main#private-dining section:nth-of-type(1) a:hover {
+    background-color: #A0C3A9;
+}
+
+@media (max-width: 48em) { 
+    main#private-dining section:nth-of-type(1) {
+        padding: 2em 1em; 
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    main#private-dining section:nth-of-type(1) img {
+        width: 100%; 
+    }
+
+    main#private-dining section:nth-of-type(1) h1 {
+        margin-bottom: 1em;
+    }
+
+    main#private-dining section:nth-of-type(1) p {
+        margin-bottom: 1em;
+    }
+
+    main#private-dining section:nth-of-type(1) a {
+        margin-top: 1.5em;
+        width: auto;
+    }
+}
+
+/* Section 2: Onze Ruimtes */
+main#private-dining section:nth-of-type(2) {
+    background-color: #BFD4B2;
+    max-width: 75em;
+    margin: 1em auto;
+    padding: 2em;
+    border-radius: 0.9375em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main#private-dining section:nth-of-type(2) h2 {
+    font-size: 2.5em;
+    color: #20412F;
+    width: 100%;
+    text-align: center;
+}
+
+main#private-dining section:nth-of-type(2) ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 1.5em;
+    width: 100%;
+    max-width: 75em;
+}
+
+main#private-dining section:nth-of-type(2) li {
+    flex: 1;
+    min-width: 17.5em; 
+    background-color: #fff;
+    border-radius: 0.9375em;
+    padding: 1.5em;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    max-width: 18.75em; 
+}
+
+main#private-dining section:nth-of-type(2) li img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625em; 
+    margin-bottom: 1em;
+}
+
+main#private-dining section:nth-of-type(2) li h3 {
+    font-size: 1.7em;
+    color: #20412F;
+    margin-bottom: 0.5em;
+}
+
+main#private-dining section:nth-of-type(2) li p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Responsive design: Stack the blocks vertically on smaller screens */
+@media (max-width: 48em) { 
+    main#private-dining section:nth-of-type(2) ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0; 
+        width: 100%; 
+    }
+
+    main#private-dining section:nth-of-type(2) li {
+        margin-bottom: 1em;
+    }
+}
+
+/* Section 3: Private Dining bij Hangar */
+main#private-dining section:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: 1fr 28.125em;
+    grid-template-rows: auto;
+    column-gap: 1em;
+    align-items: start;
+    max-width: 75em;
+    margin: 1em auto;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 0.9375em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+}
+
+main#private-dining section:nth-of-type(3) img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+    width: 100%;
+    height: 30em;
+    border-radius: 0.9375em;
+    object-fit: cover;
+}
+
+main#private-dining section:nth-of-type(3) h2 {
+    grid-column: 1 / 2;
+    font-size: 2.2em;
+    color: #20412F;
+    margin: 0;
+    padding-bottom: 0.2em;
+}
+
+main#private-dining section:nth-of-type(3) p {
+    grid-column: 1 / 2;
+    margin: 0;
+    padding-bottom: 0.4em;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+@media (max-width: 48em) {
+    main#private-dining section:nth-of-type(3) {
+        padding: 2em 1em;
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    main#private-dining section:nth-of-type(3) img {
+        width: 100%;
+    }
+
+    main#private-dining section:nth-of-type(3) h2 {
+        margin-bottom: 1em;
+    }
+
+    main#private-dining section:nth-of-type(3) p {
+        margin-bottom: 1em;
+    }
+
+    main#private-dining section:nth-of-type(3) a {
+        margin-top: 1.5em;
+        width: auto;
+    }
+}
+
+
+/* Section 4: Faciliteiten - Make it as wide as the previous sections */
+main#private-dining section:nth-of-type(4) {
+    background-color: #8FA98B;
+    max-width: 75em; 
+    margin: 1em auto;
+    padding: 3em;
+    border-radius: 0.9375em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+main#private-dining section:nth-of-type(4) ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    gap: 1em;
+}
+
+main#private-dining section:nth-of-type(4) li {
+    flex: 1;
+    min-width: 9.375em; 
+    max-width: 11.25em; 
+    background-color: #fff;
+    border-radius: 0.9375em;
+    padding: 0.5em;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+main#private-dining section:nth-of-type(4) figcaption {
+    text-align: center;
+    font-weight: bold;
+}
+
+main#private-dining section:nth-of-type(4) li img {
+    width: 100%;
+    height: auto;
+    max-height: 9.375em;
+    border-radius: 0.625em;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 64em) { 
+    main#private-dining section:nth-of-type(4) ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main#private-dining section:nth-of-type(4) li {
+        flex: 1 1 calc(33.33% - 1em);
+        margin-bottom: 1em;
+    }
+}
+
+@media (max-width: 48em) {
+    main#private-dining section:nth-of-type(4) ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main#private-dining section:nth-of-type(4) li {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}
+
+/* Section 5: Mogelijkheden bij Hangar */
+main#private-dining section:nth-of-type(5) {
+    display: grid;
+    grid-template-columns: 1fr 28.125em;
+    grid-template-rows: auto;
+    column-gap: 1em;
+    align-items: start;
+    max-width: 75em;
+    margin: 1em auto;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 0.9375em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+}
+
+main#private-dining section:nth-of-type(5) img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+    width: 100%;
+    height: 24em;
+    border-radius: 0.9375em;
+    object-fit: cover;
+}
+
+main#private-dining section:nth-of-type(5) h2 {
+    grid-column: 1 / 2;
+    font-size: 2em;
+    color: #20412F;
+    margin: 0;
+    padding-bottom: 0.2em;
+}
+
+main#private-dining section:nth-of-type(5) p:nth-of-type(1),
+main#private-dining section:nth-of-type(5) p:nth-of-type(2) {
+    grid-column: 1 / 2;
+    margin: 0;
+    padding-bottom: 0.4em;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Smaller 'Contact opnemen' button with equal space on both sides */
+main#private-dining section:nth-of-type(5) a {
+    grid-column: 1 / 2;
+    display: inline-block;
+    margin: 0;
+    background-color: #20412F;
+    color: white;
+    padding: 0.5em 1em; 
+    text-decoration: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+@media (max-width: 48em) {
+    main#private-dining section:nth-of-type(5) {
+        padding: 2em 1em;
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    main#private-dining section:nth-of-type(5) h2 {
+        margin-bottom: 1em;
+    }
+
+    main#private-dining section:nth-of-type(5) p {
+        margin-bottom: 1em;
+    }
+
+    main#private-dining section:nth-of-type(5) a {
+        margin-top: 1.5em;
+        width: auto;
+    }
+}
+
+main#private-dining section:nth-of-type(5) a:hover {
+    background-color: #A0C3A9;
+}
+
+/* Section 6: Proud to have served */
+main#private-dining section:nth-of-type(6) {
+    max-width: 75em;
+    margin: 2em auto;
+    padding: 2em;
+    text-align: center;
+}
+
+main#private-dining section:nth-of-type(6) h2 {
+    font-size: 2.5em;
+    color: #20412F;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+main#private-dining section:nth-of-type(6) ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main#private-dining section:nth-of-type(6) li {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 9.375em; 
+}
+
+main#private-dining section:nth-of-type(6) li img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-width: 9.375em; 
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 48em) {
+    main#private-dining section:nth-of-type(6) ul {
+        flex-direction: column;
+    }
+
+    main#private-dining section:nth-of-type(6) li {
+        margin-bottom: 1em;
+    }
+}
+
+/* Section 7: Contact Section */
+main#private-dining section:nth-of-type(7) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    max-width: 62.5em; 
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #20412F;
+    border-radius: 0.9375em;
+    color: white;
+}
+
+main#private-dining section:nth-of-type(7) h2 {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+main#private-dining section:nth-of-type(7) address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 12.5em; 
+    margin: auto;
+}
+
+main#private-dining section:nth-of-type(7) address img {
+    width: 9.375em; 
+    height: 9.375em;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1em;
+}
+
+main#private-dining section:nth-of-type(7) address p {
+    margin: 0.5em 0;
+}
+
+main#private-dining section:nth-of-type(7) address p a {
+    color: #A0C3A9;
+}
+
+/* Contact form styling */
+main#private-dining section:nth-of-type(7) form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em 2em;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+main#private-dining section:nth-of-type(7) form label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 0.3em;
+    color: white;
+}
+
+main#private-dining section:nth-of-type(7) form input,
+main#private-dining section:nth-of-type(7) form select,
+main#private-dining section:nth-of-type(7) form textarea,
+main#private-dining section:nth-of-type(7) form button {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 0.3125em; 
+    font-size: 1em;
+    color: #333;
+}
+
+main#private-dining section:nth-of-type(7) form textarea {
+    grid-column: 1 / 3;
+    height: 6.25em; 
+    resize: vertical;
+}
+
+main#private-dining section:nth-of-type(7) form select {
+    grid-column: 1 / 3;
+}
+
+main#private-dining section:nth-of-type(7) form button {
+    grid-column: 1 / 3;
+    background-color: #A0C3A9;
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 0.3125em;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    margin: 0 auto;
+}
+
+main#private-dining section:nth-of-type(7) form button:hover {
+    background-color: #87B090;
+}
+
+/* Responsive design for contact form */
+@media (max-width: 48em) { 
+    main#private-dining section:nth-of-type(7) {
+        grid-template-columns: 1fr;
+    }
+
+    main#private-dining section:nth-of-type(7) form {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    main#private-dining section:nth-of-type(7) form textarea,
+    main#private-dining section:nth-of-type(7) form button {
+        grid-column: 1;
+    }
+}
+
+/* Global responsiveness for smaller screens */
+@media (max-width: 48em) {
+    main#private-dining section:nth-of-type(1),
+    main#private-dining section:nth-of-type(3),
+    main#private-dining section:nth-of-type(5) {
+        grid-template-columns: 1fr;
+        text-align: center;
+        max-width: 100%;
+        padding: 1em;
+    }
+
+    main#private-dining section:nth-of-type(1) img,
+    main#private-dining section:nth-of-type(3) img,
+    main#private-dining section:nth-of-type(5) img {
+        grid-column: 1 / -1;
+        max-width: 100%;
+        height: auto;
+        grid-row: 3 / 4;
+    }
+
+    main#private-dining section:nth-of-type(2) ul,
+    main#private-dining section:nth-of-type(4) ul,
+    main#private-dining section:nth-of-type(6) ul {
+        flex-direction: column;
+    }
+
+    main#private-dining form {
+        max-width: 90%;
+    }
+}
